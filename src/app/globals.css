@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'SN Pro';
+  src: url('/fonts/SNPro-Variable.woff2?v=2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --color-cream: #F7F6F2;
+  --color-purple: #BFA6D9;
+  --color-purple-dark: #A38CC5;
+  --color-purple-darker: #9680B8;
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+}
+
+@theme {
+  /* Colors */
+  --color-cream: var(--color-cream);
+  --color-purple: var(--color-purple);
+  --color-purple-dark: var(--color-purple-dark);
+  --color-purple-darker: var(--color-purple-darker);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Font Families */
+  --font-sans: 'SN Pro', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-serif: 'Times New Roman', Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Custom scrollbar for the right panel only */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-purple-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-purple-darker);
+}
