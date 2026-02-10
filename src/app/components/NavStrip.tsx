@@ -69,18 +69,16 @@ export function NavStrip({ isDetail, isDetailLayout, onBackToLogs, onConnectClic
               className="inline-block"
             />
           </span>
-          <span className="opacity-70 tracking-[0.1em] shrink-0">
-            <a
-              href={siteConfig.githubRepoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer hover:opacity-100 transition-opacity"
-            >
-              v{siteConfig.version}
-            </a>
-            <span className="opacity-50 mx-2">/</span>
+          <a
+            href={siteConfig.githubRepoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-70 tracking-[0.1em] shrink-0 cursor-pointer hover:opacity-100 transition-opacity"
+          >
+            v{siteConfig.version}
+            <span className="opacity-50 mx-1">/</span>
             {siteConfig.commitSha}
-          </span>
+          </a>
         </div>
       </motion.div>
 
