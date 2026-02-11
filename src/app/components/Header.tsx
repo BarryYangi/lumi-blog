@@ -11,7 +11,7 @@ export function Header({ isDetail }: HeaderProps) {
     <header className="flex w-full border-b border-black">
       {/* Left Header */}
       <motion.div
-        className="border-r border-black h-20 flex items-center justify-between p-6 bg-cream"
+        className="left-panel border-r border-black h-20 flex items-center justify-between p-6 bg-cream"
         initial={{ flexBasis: '50%' }}
         animate={{ flexBasis: isDetail ? '40%' : '50%' }}
         transition={{ type: 'spring', stiffness: 260, damping: 30 }}
@@ -26,7 +26,7 @@ export function Header({ isDetail }: HeaderProps) {
 
       {/* Right Header */}
       <motion.div
-        className="h-20 flex items-center justify-between p-6 bg-purple"
+        className="right-header h-20 flex items-center justify-between p-6 bg-purple"
         initial={{ flexBasis: '50%' }}
         animate={{ flexBasis: isDetail ? '60%' : '50%' }}
         transition={{ type: 'spring', stiffness: 260, damping: 30 }}

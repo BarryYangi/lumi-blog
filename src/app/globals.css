@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @font-face {
   font-family: 'SN Pro';
@@ -67,20 +68,31 @@ a {
   animation: marquee 30s linear infinite;
 }
 
-/* Custom scrollbar for the right panel only */
+
+/* Hide scrollbars (keep scrollability) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
+  height: 0;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-purple);
+* {
+  scrollbar-width: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-purple-dark);
-  border-radius: 4px;
+*::-webkit-scrollbar {
+  display: none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-purple-darker);
+@media (max-width: 979px) {
+  .left-panel {
+    display: none;
+  }
+
+  .right-header,
+  .right-nav,
+  .right-panel {
+    flex: 1 1 100% !important;
+    flex-basis: 100% !important;
+    width: 100% !important;
+  }
 }

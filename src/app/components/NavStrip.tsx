@@ -40,7 +40,7 @@ export function NavStrip({ isDetail, isDetailLayout, onBackToLogs, onConnectClic
     <nav className="flex w-full border-b border-black">
       {/* Left: Lumi timezone · Right: version & commit → GitHub */}
       <motion.div
-        className="border-r border-black px-8 py-5 bg-cream text-sm font-medium uppercase tracking-wider flex items-center justify-between gap-10"
+        className="left-panel border-r border-black px-8 py-5 bg-cream text-sm font-medium uppercase tracking-wider flex items-center justify-between gap-10"
         initial={{ flexBasis: '50%' }}
         animate={{ flexBasis: expand ? '40%' : '50%' }}
         transition={{ type: 'spring', stiffness: 260, damping: 30 }}
@@ -84,7 +84,7 @@ export function NavStrip({ isDetail, isDetailLayout, onBackToLogs, onConnectClic
 
       {/* Right Nav */}
       <motion.div
-        className="flex justify-between px-6 py-4 bg-purple text-sm font-medium uppercase tracking-wider"
+        className="right-nav flex justify-between px-6 py-4 bg-purple text-sm font-medium uppercase tracking-wider"
         initial={{ flexBasis: '50%' }}
         animate={{ flexBasis: expand ? '60%' : '50%' }}
         transition={{ type: 'spring', stiffness: 260, damping: 30 }}
@@ -105,7 +105,7 @@ export function NavStrip({ isDetail, isDetailLayout, onBackToLogs, onConnectClic
               onClick={onConnectClick}
               className="cursor-pointer"
             >
-              Connect
+              About
             </button>
           </>
         )}
