@@ -12,9 +12,6 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_APP_VERSION: pkg.version,
     NEXT_PUBLIC_GIT_COMMIT_SHA: process.env.VERCEL_GIT_COMMIT_SHA ?? "",
   },
-  turbopack: {
-    root: "/Users/barry/Documents/Project/i/lumi-blog",
-  },
   images: {
     remotePatterns: [
       {
