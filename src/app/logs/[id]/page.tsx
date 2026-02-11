@@ -16,8 +16,19 @@ export async function generateMetadata(props: { params: Params }): Promise<Metad
   }
 
   return {
-    title: `${log.title} | Lumi Log #${log.id}`,
+    title: log.title,
     description: log.description,
+    openGraph: {
+      title: log.title,
+      description: log.description,
+      images: [{ url: `/logs/${log.id}/og`, width: 1200, height: 630, alt: log.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: log.title,
+      description: log.description,
+      images: [`/logs/${log.id}/og`],
+    },
   };
 }
 
@@ -59,4 +70,8 @@ export default async function LogPage(props: { params: Params }) {
 
 export async function generateStaticParams() {
   return getAllLogs().map((log) => ({ id: log.id }));
+}
+
+export async function generateImageMetadata() {
+  return [{ id: 'default', size: { width: 1200, height: 630 } }];
 }
